@@ -38,12 +38,11 @@ def l(a,i,r):
     return 2.0*sum(map(lambda x:a[x[0]][x[1]],itertools.combinations(s,2)))/k/(k-1)
 
 def g(a):
-    n=len(a)
-    r=range(n)
-    return sum([l(a,i,r) for i in r])/n
+    no=len(a)
+    r=range(no)
+    return sum([l(a,i,r) for i in r])/no
 
 
 
 
-print graph(10,8)
-		
+print g(graph(10,8))		

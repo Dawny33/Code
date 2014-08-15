@@ -2,6 +2,7 @@ import random
 import numpy as np
 import math
 import itertools
+import matplotlib.pyplot as plt
 
 
 def graph(n,e):
@@ -19,13 +20,15 @@ def graph(n,e):
     #return m
 
 
-#For calculating the degree of each node.        
+#For calculating the degree of each node.
+    degree = []
     for ij in m:
         summ =  0
-        degree = []
+        
         for ik in ij:
             summ += ik
-        print summ    
+        degree.append(summ)
+    print degree    
     return m
 
 
@@ -44,5 +47,5 @@ def g(a):
 
 
 
-
+#plt.hist(degree, bins=(-10,-1,1,10))
 print g(graph(10,8))		

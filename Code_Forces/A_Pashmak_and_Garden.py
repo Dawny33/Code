@@ -11,7 +11,10 @@ elif (T[0]==T[2]) and (T[1]!=T[3]):
     print str(T[0]+p2)+" "+str(T[1])+" "+str(T[2]+p2)+" "+str(T[3])
 
 elif (T[0]!=T[1]) and (T[0]!=T[2]) and (T[0]!=T[3]) and (T[1]!=T[2]) and (T[1]!=T[3]) and (T[2]!=T[3]):
-    print T[2]+" "+T[1]+" "+T[0]+" "+T[3]
+    print str(T[2])+" "+str(T[1])+" "+str(T[0])+" "+str(T[3])
+
+elif (T[0]==T[1]) and (T[2]==T[3]):
+    print str(T[0])+" "+str(T[2])+" "+str(T[3])+" "+str(T[1])
 
 else:
     print -1

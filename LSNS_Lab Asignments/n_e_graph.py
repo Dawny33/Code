@@ -3,6 +3,7 @@ import numpy as np
 import math
 import itertools
 
+
 def graph(n,e):
     m = np.zeros([n,n], int)
 
@@ -17,15 +18,6 @@ def graph(n,e):
             k += 1
     #return m
 
-##    for p in range(n):
-##        summ = 0         
-##        for q in range(n):            
-##            summ += m[p][q]
-##    
-##            
-##    return (summ,p)
-
-    #print m
 
 #For calculating the degree of each node.        
     for ij in m:
@@ -35,6 +27,7 @@ def graph(n,e):
             summ += ik
         print summ    
     return m
+
         
 print graph(10,8)
 		

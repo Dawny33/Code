@@ -46,6 +46,10 @@ def g(a):
     return sum([l(a,i,r) for i in r])/no
 
 
-
-#plt.hist(degree, bins=(-10,-1,1,10))
 print g(graph(10,8))		
+
+
+#For the degree frequency plotting. Plot included in the package.
+
+#plt.hist([2, 0, 2, 4, 1, 1, 0, 2, 2, 2])
+#plt.show()

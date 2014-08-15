@@ -18,6 +18,7 @@ def graph(n,e):
             m[j][i] = 1
             k += 1
     #return m
+    print m
 
 
 #For calculating the degree of each node.
@@ -31,6 +32,7 @@ def graph(n,e):
     print degree
     plt.hist(degree)
     return m
+    
 
 
 #For calculating the average clustering coeffiecient.

@@ -28,7 +28,8 @@ def graph(n,e):
         for ik in ij:
             summ += ik
         degree.append(summ)
-    print degree    
+    print degree
+    plt.hist(degree)
     return m
 
 
@@ -49,7 +50,5 @@ def g(a):
 print g(graph(10,8))		
 
 
-#For the degree frequency plotting. Plot included in the package.
-
-#plt.hist([2, 0, 2, 4, 1, 1, 0, 2, 2, 2])
-#plt.show()
+#For the degree frequency plotting. Plot command in graph module.
+plt.show()

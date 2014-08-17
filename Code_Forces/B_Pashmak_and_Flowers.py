@@ -1,5 +1,5 @@
 T = raw_input()
-T = int()
+T = int(T)
 
 p = raw_input()
 p = map(int,p.split())

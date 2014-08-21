@@ -16,9 +16,9 @@ def float_range(start, end, increment):
 
 
 for p in float_range(0,1,0.01):
-g = watts_strogatz_graph(no_nodes, 4, p)
-pp.append(density(g))
-gg.append(average_clustering(g))
+    g = watts_strogatz_graph(no_nodes, 4, p)
+    pp.append(density(g))
+    gg.append(average_clustering(g))
 #print density(g), average_clustering(g)
 print pp,gg
 plt.plot(o,gg)

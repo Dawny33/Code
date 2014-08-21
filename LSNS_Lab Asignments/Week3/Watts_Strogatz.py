@@ -11,6 +11,7 @@ for p in [ 0.1, 0.2, 0.3]:
     
     #print density(g), average_clustering(g)
 print pp,gg
-plot(pp,gg)
+
+plt.plot(pp,gg)
 
 plt.show() 

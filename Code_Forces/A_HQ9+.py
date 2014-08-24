@@ -1,9 +1,4 @@
-T = raw_input()
+aa = raw_input()
 
-for i in range(0, len(T)):
-    if (T[i] == "H") or (T[i] == "Q") or (T[i] == "9") or (T[i] == "+"):
-        print "YES"
-        break
-    else:
-        print "NO"
-        break
+if 'H' in aa or 'Q' in aa or '9' in aa: print 'YES'
+else: print 'NO' 

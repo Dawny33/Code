@@ -26,7 +26,7 @@ def dijkstra(adj, costs, s, t):
 # vertex : [d[v], parent_v, v]  {distances from parent node.}
     Qd = {}    
 # predecessor
-    p = {}     
+    p = {}  
 
     visited_set = set([s])
 

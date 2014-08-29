@@ -39,6 +39,6 @@ C = full(A);
 
 [r,c] = find(triu(C));
 edges = [r,c];
-xlswrite('scalefree.xls',edges);
+%xlswrite('scalefree.xls',edges);
 
 end 

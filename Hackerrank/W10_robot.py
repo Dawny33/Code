@@ -2,21 +2,10 @@ import random
 
 N = input()
 
-V = []
-P = []
-go_arr = []
-for _ in range(N):
-    v,p = map(int, raw_input().split())
-    V = V + [v]
-    P = P + [p]
-    go_arr.append(go(v,p))
-print max(go_arr)
-
-
-
 def go(step,energy):
     score = 0
     if step==N:
+        #print V
         score += V[step]
     else:
         way = random.randint(1,2)
@@ -32,3 +21,12 @@ def go(step,energy):
     
 
 
+V = []
+P = []
+go_arr = []
+for _ in range(N):
+    v,p = map(int, raw_input().split())
+    V = V + [v]
+    P = P + [p]
+go_arr.append(go(v-1,p-1))
+print sum(go_arr)

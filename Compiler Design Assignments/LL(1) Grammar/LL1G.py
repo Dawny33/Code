@@ -26,6 +26,8 @@ for key in corr_dict.keys():
     for search in range(len(corr_dict[key])):
         if corr_dict[key][search]=="|" and (corr_dict[key][search+1] not in non_terminals):
             firsts_dict[key]+ corr_dict[key][search+1]
+    
+
 
 print firsts_dict
 

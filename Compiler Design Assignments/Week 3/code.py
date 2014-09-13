@@ -1,4 +1,4 @@
-f=open("grammer.txt",'r')
+f=open("C:\\Users\\acer\\Documents\\GitHub\\Code\\Compiler Design Assignments\\Week 3\\grammar.txt",'r')
 p4=[]
 p3=[]
 while True:
@@ -12,6 +12,9 @@ while True:
 	p4.append(s[0:i])
 	p3.append(s[i+2:l-1])
 l=len(p3)
+
+# p1 is left stack
+# p2 is right stack
 p1=[]
 p2=[]
 for i in range(0,l):
@@ -40,13 +43,15 @@ l=len(op)
 for i in range(0,l):
 	if len(op[i])==1:
 		opr.append(op[i])
+
+# a is precidence table
 a=[]
 for i in range(0,oc+1):
 	b=[]
 	for j in range(0,oc+1):
 		b.append(0)
 	a.append(b)
-f=open("precidence.txt",'r')
+f=open("C:\\Users\\acer\\Documents\\GitHub\\Code\\Compiler Design Assignments\\Week 3\\precidence.txt",'r')
 j=0
 while True:
 	s=f.readline()
@@ -57,10 +62,8 @@ while True:
 	for i in range(0,l):
 		a[j][i]=p[i]
 	j=j+1
-# a is precidence table
-# p1 is left stack
-# p2 is right stack
-f=open("input.txt",'r')
+
+f=open("C:\\Users\\acer\\Documents\\GitHub\\Code\\Compiler Design Assignments\\Week 3\\input.txt",'r')
 b=[]
 while True:
 	r=f.readline()

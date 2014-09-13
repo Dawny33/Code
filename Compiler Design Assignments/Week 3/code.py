@@ -44,7 +44,6 @@ for i in range(0,l):
 	if len(op[i])==1:
 		opr.append(op[i])
 
-# a is precidence table
 a=[]
 for i in range(0,oc+1):
 	b=[]

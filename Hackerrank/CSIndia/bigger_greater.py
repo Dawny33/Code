@@ -1,19 +1,21 @@
+from itertools import permutations
+
 T = int(input())
+
 
 for _ in range(T):
     s = raw_input()
-    ord_mat = []
-    rev_mat = []
-    str_buff = ""
-    for i in range(len(s)):
-        ord_mat.append(s[i])
-    #print ord_mat
-    for j in reversed(sorted(ord_mat)):
-        rev_mat.append(j)
-        print rev_mat
-    #for k in range(len(rev_mat)):
-     #   str_buff = str_buff.join(rev_mat[k])
-    if s == str_buff:
-        print "no answer"
+    set_arr = []
+    perms = [''.join(p) for p in permutations(s)]
+    for j in set(perms):
+        set_arr.append(j)
+    sor_set_arr = sorted(set_arr)
+    fin_arr = []
+    for k in range(len(sor_set_arr)):
+        if sor_set_arr[k]>s:
+            fin_arr.append(sor_set_arr[k])
+    if len(fin_arr)>0:
+        print fin_arr[0]
     else:
-        print str_buff
+        print "no answer"
+

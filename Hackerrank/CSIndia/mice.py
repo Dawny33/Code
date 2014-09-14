@@ -9,5 +9,5 @@ for _ in range(T):
         if len(t1)==num and len(t2)==num:
             for i in range(num):
                 arr.append(abs(t1[i]-t2[i]))
-            print arr
+            #print arr
             print max(arr)

@@ -1,13 +1,16 @@
-T = int(input())
+def gcd(a, b):
+    """Return greatest common divisor using Euclid's Algorithm."""
+    while b:      
+        a, b = b, a % b
+    return a
 
-for _ in range(T):
-    s = map(int, raw_input().split())
-    t = map(int, raw_input().split())
-    if len(t) == s[1]:
-        arr=[]
-        for i in range(s[0]):
-            for j in range(len(t)):
-                #if i%t[j]==0:
-                arr.append(i%t[j]==0)
-    print arr
-                
+def lcm(a, b):
+    
+    return a * b // gcd(a, b)
+
+def lcml(p):
+    for i in range(len(p)):
+        return lcm(p[i],p[i+1:])
+
+
+print lcml([2,3])

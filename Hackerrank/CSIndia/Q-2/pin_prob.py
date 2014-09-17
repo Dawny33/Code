@@ -1,3 +1,4 @@
+
 T = int(input())
 
 for _ in range(T):
@@ -6,9 +7,7 @@ for _ in range(T):
     count = 0
     if len(s2)==s1[1]:
         for i in range(s1[0]):
-            for j in range(len(s2)):
-                if i%s2[j]==0:
-                    count += 1
+        
+            
                     
     print count
-    

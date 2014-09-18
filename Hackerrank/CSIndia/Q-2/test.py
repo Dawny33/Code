@@ -8,9 +8,13 @@ def lcm(a, b):
     
     return a * b // gcd(a, b)
 
-def lcml(p):
-    for i in range(len(p)):
-        return lcm(p[i],p[i+1:])
 
 
-print lcml([2,3])
+p = [5,10,15]
+arr = []
+i = 1
+while i<len(p):
+    arr.append(lcm(p[i-1],p[i]))
+    i+=1
+
+print arr[-1]

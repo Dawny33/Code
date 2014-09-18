@@ -2,23 +2,25 @@
 T = int(input())
 
 
-def lcm(*values):
-	values = set([abs(int(v)) for v in values])
-	if values and 0 not in values:
-		n = n0 = max(values)
-		values.remove(n)
-		while any( n % m for m in values ):
-			n += n0
-		return n
-	return 0
-#print lcm(*[2,3])
+def gcd(a, b):
+    while b:      
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):    
+    return a * b // gcd(a, b)
 
 
 
 for _ in range(T):
     s1 = map(int, raw_input().split())
     s2 = map(int, raw_input().split())
+    arr = []
+
     if len(s2)==s1[1]:
-#    print s2
-        lcm = lcm(*s2)
-        print s1[0]/lcm
+        for i in range(1,len(s2)):
+            arr.append(lcm(s2[i-1],s2[i]))
+        if len(s2) == 1:
+            print s1[0]/s2[0]
+        else:
+            print s1[0]/arr[-1]

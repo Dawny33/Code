@@ -12,7 +12,7 @@ for _ in range(T):
             i+=1
         else:
             if i!=len(s):
-                p = s[i] - s[i+1]
+                p = s[i-1] - s[i]
             print p
             break
         i +=1

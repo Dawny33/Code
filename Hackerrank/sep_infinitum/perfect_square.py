@@ -21,11 +21,21 @@ def is_square(integer):
     else:
         return False
     
-def rec_mult(li):
-    prod = 1
-    for j in range(len(li)):
-        prod*li[j]
-    return prod
+def reducefract(n, d):
+    '''Reduces fractions. n is the numerator and d the denominator.'''
+    def gcd(n, d):
+        while d != 0:
+            t = d
+            d = n%d
+            n = t
+        return n
+    assert d!=0, "integer division by zero"
+    assert isinstance(d, int), "must be int"
+    assert isinstance(n, int), "must be int"
+    greatest=gcd(n,d)
+    n/=greatest
+    d/=greatest
+    return n, d
 
 while(T):
     T -= 1
@@ -41,16 +51,6 @@ while(T):
     elif count == len(arr):
         print 1
     else:
-        countgen = list(divisorGenerator(count))
-        arrgen = list(divisorGenerator(count))
-        for i in countgen:
-            for j in arrgen:
-                if i==j:
-                    countgen.remove(i)
-                    arrgen.remove(j)
-                    
-        if (len(countgen)>1 or len(countgen)) or (len(countgen)>1 and len(countgen)):
-            print str(rec_mult(countgen)) + "/" + str(rec_mult(arrgen))
-        else:
-            print str(count) + "/" + str(len(arr))
+        k = reducefract(count,len(arr))
+        print str(k[0]) + "/" + str(k[1])
 

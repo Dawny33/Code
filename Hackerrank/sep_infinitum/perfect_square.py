@@ -20,6 +20,7 @@ def is_square(integer):
         return True
     else:
         return False
+    
 def rec_mult(li):
     prod = 1
     for j in range(len(li)):

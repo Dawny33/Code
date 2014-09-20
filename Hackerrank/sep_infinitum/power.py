@@ -1,12 +1,22 @@
 T = int(input())
 
-for _ in range(T):
+while(T):
+    T -= 1
     m,n = map(int,raw_input().split())
     sums = 0
-    for i in range(1,m+1):
+    i=1
+    while (i<=m):
         sums += i**n
+        i += 1
+        
     sums = str(sums)
     if len(sums[-2:]) == 1:
         print "0" + sums[-2:]
     else:
         print sums[-2:]
+
+
+
+
+    
+

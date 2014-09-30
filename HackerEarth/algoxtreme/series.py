@@ -1,24 +1,19 @@
+
+
+
 T = int(input())
 
 while(T):
     T -= 1
+    q = map(int, raw_input().split())
+    n = int(input())
 
-    a,b,c,d,e = map(int,raw_input().split())
+    def s(n,arr=q):
+        if n<5:
+            return arr[n]
+        else:
+            return (s(n-1) + s(n-2) + s(n-3) + 2*s(n-4) + s(n-5))
+    
+    print s(n,q)
+    
 
-    n = int(iput())
-
-    if n==1:
-        print a
-
-    if n==1:
-        print b
-
-    if n==1:
-        print c
-
-    if n==1:
-        print d
-
-    if n==1:
-        print e
-        

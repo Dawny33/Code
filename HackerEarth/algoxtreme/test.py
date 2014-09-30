@@ -1,19 +1,10 @@
-def zeroes(n):
-    i = 1
-    result = 0
-    while n >= i:
-        i *= 5
-        result += n/i  # (taking floor, just like Python or Java does)
-    return result
+p = []
 
-T = int(input())
+a = [1,2,3]
 
-while(T):
-    T -= 1
-    s = map(int, raw_input().split())
-    print s
+for i in a:
+    for j in a:
+        if i!=j:
+            p.append((i,j))
 
-    count = 0
-    for i in range(s[0],s[1]):
-        count +=  zeroes(i)
-    print count
+print p

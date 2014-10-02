@@ -1,38 +1,14 @@
-def nextPalin(K):
+T = int(input())
 
-    if all(digit == '9' for digit in K):
-        return int(K) + 2
+while(T):
+    T -= 1
 
-    L = len(K)
-    left = K[:L/2]
-    center = L % 2 and K[L/2] or ""
-    right = left[::-1]
-    P = left + center + right
-    if P > K:
-        return P
-    if center and center != '9':
-        center = chr(ord(center) + 1)
-        return left + center + right
-    elif center:
-        center = '0'
-    left = list(left)
-    digits_left = len(left)
-    while digits_left:
-        idx = digits_left - 1
-        if left[idx] == '9':
-            left[idx] = '0'
-            digits_left = digits_left - 1
-        else:
-            left[idx] = chr(ord(left[idx]) + 1)
+    s = int(input())
+    i = s+1
+    while(i):
+        k = str(i)
+        if k[:]==k[::-1]:
+            print k
             break
-    left = "".join(left)
-    right = left[::-1]
-    return left + center + right
-
-
-def main():
-    for _ in xrange(int(raw_input())):
-        print(nextPalin(raw_input()))
-
-
-main()
+        else:
+            i += 1

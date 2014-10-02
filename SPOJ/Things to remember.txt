@@ -1,2 +1,7 @@
 1. Sum of squares = n(n+1)(2n+1)/6
+
 2.  Number of squares in an NxN grid:  sqr(1) +sqr(2)+........+sqr(n)
+
+3. nth term in an GP: (first_term)*(r**(n-1)); where r = a3/a2 or a2/a1 or a7/a6, etc
+
+

@@ -1,0 +1,2 @@
+1. Sum of squares = n(n+1)(2n+1)/6
+2.  Number of squares in an NxN grid:  sqr(1) +sqr(2)+........+sqr(n)

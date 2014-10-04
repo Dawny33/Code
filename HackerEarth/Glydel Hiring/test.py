@@ -1,8 +1,18 @@
-n = 10
-i = 2
-while i * i < n:
-     while n % i == 0:
-         n = n / i
-     i = i + 1
+import random
+from fractions import gcd
 
-print (n)
+def pollardRho(N):
+        if N%2==0:
+                return 2
+        x = random.randint(1, N-1)
+        y = x
+        c = random.randint(1, N-1)
+        g = 1
+        while g==1:            
+                x = ((x*x)%N+c)%N
+                y = ((y*y)%N+c)%N
+                y = ((y*y)%N+c)%N
+                g = gcd(abs(x-y),N)
+        return g
+
+print pollardRho(5)

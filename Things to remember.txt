@@ -4,4 +4,5 @@
 
 3. nth term in an GP: (first_term)*(r**(n-1)); where r = a3/a2 or a2/a1 or a7/a6, etc
 
+4. a-> initial no. of candles; b->no. of candles(burnt out) to remake a candle.  total time units for burning out a candles: (ab-1)/(b-1)
 

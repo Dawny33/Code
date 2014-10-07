@@ -6,3 +6,5 @@
 
 4. a-> initial no. of candles; b->no. of candles(burnt out) to remake a candle.  total time units for burning out a candles: (ab-1)/(b-1)
 
+5. Use [int(i) for i in raw_input().split()]  instead of map.
+

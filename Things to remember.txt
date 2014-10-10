@@ -8,4 +8,4 @@
 
 5. Use [int(i) for i in raw_input().split()]  instead of map.
 
-6. String checking using re:    re.search("h.*e.*l.*o", "some_string")   Detects a sting hello from an input like this ssfvhheeellllooodfv
+6. String checking using re:    re.search(".*h.*e.*l.*o", "some_string")   Detects a sting hello from an input like this ssfvhheeellllooodfv

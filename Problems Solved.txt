@@ -1,0 +1,10 @@
+Total Problems Solved:
+
+Codeforces:     37
+Hackerearth:    22
+Hackerrank:     34
+SPOJ:           17
+Codechef:       04
+
+               ------  
+Total:          114

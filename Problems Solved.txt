@@ -2,9 +2,9 @@ Total Problems Solved:
 
 Codeforces:     40
 Hackerearth:    25
-Hackerrank:     34
+Hackerrank:     39
 SPOJ:           17
 Codechef:       04
 
                ------  
-Total:          120
+Total:          125

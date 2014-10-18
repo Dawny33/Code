@@ -1,0 +1,11 @@
+def strrev(sval):
+  if len(str(sval)) == 1: return sval
+  else:
+    strcon = str(sval)
+    return int(strcon[::-1])
+
+T = int(input())
+for i in range(0,T):
+        s, t = [x for x in input().split()]
+        x = int(strrev(str((int(strrev(s)) + int(strrev(t))))))
+        print(x)

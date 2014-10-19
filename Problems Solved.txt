@@ -1,10 +1,13 @@
 Total Problems Solved:
 
 Codeforces:     40
-Hackerearth:    25
+Hackerearth:    28
 Hackerrank:     39
 SPOJ:           17
 Codechef:       04
 
                ------  
-Total:          125
+Total:          128
+
+Achievements:
+1. #2 in HackerEarth's CodeTheWays finals  (Nirma University)

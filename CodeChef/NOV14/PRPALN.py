@@ -14,9 +14,9 @@ def isKPalindrome(String, k):
     if k > 0:
         for i in range(len(String)):
             subString = String[:i] + String[i+1:]
-            if isKPalindrome(subString, k-1) == True:
-                return True
-            return False
+        if isKPalindrome(subString, k-1) == True:
+            return True
+        return False
     elif k == 0:
         return isPalindrome(String)
     else:

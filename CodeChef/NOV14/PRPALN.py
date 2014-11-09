@@ -1,27 +1,35 @@
-def isPalindrome(String):
-    stringSize = len(String)
-    start = 0
-    end = stringSize - 1
-    while start < end and String[start] == String[end]:
-        start += 1
-        end -= 1
-    if start < end:
-        return False
-    else:
+T = input()
+
+def is_palin(strr):
+    if strr == strr[::-1]:
         return True
 
-def isKPalindrome(String, k):
-    if k > 0:
-        for i in range(len(String)):
-            subString = String[:i] + String[i+1:]
-        if isKPalindrome(subString, k-1) == True:
-            return True
-        return False
-    elif k == 0:
-        return isPalindrome(String)
-    else:
-        print 'Error number k'
-        
-    return False 
+while(T):
+    T -= 1
 
-print isKPalindrome(raw_input(),1)
+    s = raw_input()
+
+
+    if is_palin(s)==True:
+        print "YES"
+    else:
+        i,j = 0,len(s)-1
+        while(i<j):
+            if s[i]==s[j]:
+                i += 1
+                j -= 1
+            else:
+                if is_palin(s[0:i]+s[i+1:])==True:
+                    print "YES"
+                    break
+                elif is_palin(s[0:j]+s[j+1:])==True:
+                    print "YES"
+                    break
+                else:
+                    print "NO"
+                    break
+        
+    
+
+
+

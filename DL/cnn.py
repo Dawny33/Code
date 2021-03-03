@@ -66,6 +66,22 @@ images, labels = train_iter.next()
 # print(images.size())  # torch.Size([4, 3, 32, 32]) <- Batch Size = 4
 # ^ The remaining 3, 32, 32 is because the original data has shape (50000, 32, 32, 3)
 
+"""
+def plot_images(images, labels): 
+    # normalise=True below shifts [-1,1] to [0,1]
+    img_grid = torchvision.utils.make_grid(images, nrow=4, normalize=True)
+    np_img = img_grid.numpy().transpose(1,2,0)  
+    plt.imshow(np_img)
+"""
+d_class2idx = train.class_to_idx
+d_idx2class = dict(zip(d_class2idx.values(),d_class2idx.keys()))
+
+"""
+images, labels = train_iter.next()
+plot_images(images,labels)
+print(' '.join('%5s' % d_idx2class[int(labels[j])]for j in range(len(images))))
+"""
+
 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -133,10 +149,48 @@ print(optimizer.state_dict().keys())
 print(optimizer.state_dict()['param_groups'])
 """
 fname = './models/CIFAR10_cnn.path'
-torch.save(net.state_dict(), fname)
+#torch.save(net.state_dict(), fname)
 loaded_dict = torch.load(fname)
 net.load_state_dict(loaded_dict)
 
 # print(net.eval())  # Check loaded model
 
+# Keep a track of the number of images we processed
+total = 0
+# Keep a track of how many correct images we predicted
+correct = 0
 
+# .no_grad() turns off gradient tracking (saves time and memory)
+with torch.no_grad():
+    for i, data in enumerate(testLoader):
+        images, labels = data
+        outputs = net(images)
+        # Get the argmax value, as that means the most-confident label
+        _, predicted = torch.max(outputs.data, 1)
+        total += labels.size()[0]
+        # If predicted and the label is same, then the prediction is correct
+        correct += (predicted == labels).sum().item()
+
+print("Accuracy: ", correct/total)
+
+
+# Holds the number of correct images for a class
+class_correct = list(0 for i in range(10))
+# Holds the total number images for a class
+class_total = list(0 for i in range(10))
+
+with torch.no_grad():
+    for i, data in enumerate(testLoader):
+        images, labels = data
+        outputs = net(images)
+        _, predicted = torch.max(outputs, 1)
+        c = (predicted == labels)
+        for j in range(4):
+            label = labels[j]
+            class_correct[label] += c[j].item()
+            class_total[label] += 1
+
+# Printing accuracy of each class
+for i in range(10):
+    print('Accuracy of %5s : %2d %%' % (
+        d_idx2class[i], 100 * class_correct[i] / class_total[i]))    
